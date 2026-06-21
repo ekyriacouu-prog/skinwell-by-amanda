@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Skinwell by Amanda · Esthetician + Mobile Spray Tan · North Jersey</title>
+<meta name="description" content="Corrective skincare, facial sculpting, acne care, and mobile spray tans with Amanda, a licensed esthetician serving Madison, Chatham, and North Jersey." />
+
+<!-- Favicon (inline so no extra request) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23332218'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='600' fill='%23f1e9db'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23332218'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='600' fill='%23f1e9db'%3ES%3C/text%3E%3C/svg%3E" />
+
+<!-- Social share -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Skinwell by Amanda" />
+<meta property="og:title" content="Skinwell by Amanda · Esthetician + Mobile Spray Tan · North Jersey" />
+<meta property="og:description" content="Corrective skincare, facial sculpting, acne care, and a flawless mobile spray tan with Amanda, a licensed esthetician serving Madison, Chatham, and North Jersey." />
+<meta property="og:image" content="assets/hero.jpg" />
+<meta property="og:url" content="https://skinwellbyamanda.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Skinwell by Amanda · Esthetician + Mobile Spray Tan" />
+<meta name="twitter:description" content="Corrective skincare, facial sculpting, acne care, and a flawless mobile spray tan across North Jersey." />
+<meta name="twitter:image" content="assets/hero.jpg" />
+<meta name="theme-color" content="#332218" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@600&family=Parisienne&family=Petit+Formal+Script&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --espresso: #332218;
+    --espresso-soft: #463325;
+    --cream: #f1e9db;
+    --bone: #e8dfcd;
+    --paper: #faf6ee;
+    --nude: #e3d3c2;
+    --peach: #ecd9c8;
+    --ink: #33241b;
+    --grey: #6a5f54;
+    --line: #ddd3c2;
+    --accent: #875231;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --sans: 'Hanken Grotesk', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Hanken Grotesk', -apple-system, sans-serif;
+    color: var(--grey); background: var(--cream); line-height: 1.6; font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 400; line-height: 1.02; letter-spacing: -0.015em; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey); font-weight: 500; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+    padding: 0.85rem 1.7rem; border-radius: 40px;
+    font-size: 0.82rem; letter-spacing: 0.02em; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--ink); background: transparent; color: var(--ink);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+  .btn:active { transform: scale(0.97); transition-duration: 0.12s; }
+  .btn-filled { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+  .btn-filled:hover { background: var(--accent); border-color: var(--accent); }
+  .btn-filled::after {
+    content: ""; position: absolute; top: 0; left: -130%; width: 55%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.28), transparent);
+    transform: skewX(-20deg); transition: left 0.6s var(--ease-out); pointer-events: none;
+  }
+  .btn-filled:hover::after { left: 150%; }
+  .btn-light { border-color: var(--paper); color: var(--paper); }
+  .btn-light:hover { background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(12px); background: rgba(241, 233, 219, 0.8);
+    border-bottom: 1px solid transparent; transition: border-color 0.3s ease;
+  }
+  header.nav.scrolled { border-color: var(--line); }
+  /* Nav's own cursor glow (backdrop-filter isolates the global one, so the nav needs its own) */
+  header.nav::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(280px circle at var(--gx, 50%) var(--gy, -200px), rgba(214,166,116,0.6), transparent 70%);
+    mix-blend-mode: overlay; opacity: 0; transition: opacity 0.45s ease;
+  }
+  header.nav.glow-on::before { opacity: 1; }
+  .nav-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; height: 86px; }
+  .brand {
+    font-family: 'Petit Formal Script', cursive; font-style: normal;
+    display: inline-block; line-height: 1.35; padding: 6px 2px;
+    font-size: 2.25rem; font-weight: 600; letter-spacing: 0.01em; color: var(--ink);
+    background-image: linear-gradient(105deg, var(--ink) 0%, var(--ink) 44%, #ca9d6d 50%, var(--ink) 56%, var(--ink) 100%);
+    background-size: 300% 100%;
+    background-position: 150% 0;
+    background-repeat: repeat;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brandSheen 16s ease-in-out infinite;
+  }
+  @keyframes brandSheen {
+    0%, 10% { background-position: 150% 0; }
+    55%, 100% { background-position: -50% 0; }
+  }
+  .nav-links { display: flex; align-items: center; gap: 2.4rem; }
+  .nav-links a.link { font-size: 0.98rem; color: var(--grey); transition: color 0.2s ease; }
+  .nav-links a.link:hover { color: var(--ink); }
+  .nav-cta { padding: 0.72rem 1.7rem; font-size: 0.88rem; }
+  .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--ink); }
+
+  /* Hero */
+  .hero { background: var(--bone); position: relative; overflow: hidden; padding: 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; padding: 22px 0 34px; }
+  .hero-copy { display: flex; flex-direction: column; justify-content: flex-start; }
+  .hero h1 { font-size: clamp(3.1rem, 6.4vw, 5.6rem); margin: 18px 0 0; font-weight: 400; }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--accent); letter-spacing: -0.01em; }
+  .hero p.lead { font-size: 1.1rem; color: var(--grey); max-width: 27rem; margin: 22px 0 30px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-meta { display: flex; gap: 30px; margin-top: 40px; flex-wrap: wrap; }
+  .hero-meta div { font-size: 0.82rem; color: var(--grey); max-width: 8.5rem; }
+  .hero-meta strong { display: block; font-family: var(--serif); font-size: 1.45rem; color: var(--ink); font-weight: 500; letter-spacing: -0.01em; margin-bottom: 2px; }
+
+  .hero-photo {
+    position: relative; align-self: stretch; min-height: 480px; border-radius: 20px; overflow: hidden;
+    background: var(--nude);
+    box-shadow: 0 44px 100px -46px rgba(51, 36, 27, 0.6);
+  }
+  .hero-photo .slide {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
+    opacity: 0; transition: opacity 1.4s ease; display: block;
+  }
+  .hero-photo .slide.active { opacity: 1; }
+  .hero-photo .slide.portrait { object-position: center 40%; }
+  .hero-photo .grad { content: ""; position: absolute; inset: 0; z-index: 2; background: linear-gradient(to top, rgba(51,36,27,0.4), transparent 42%); pointer-events: none; }
+  .hero-dots { position: absolute; z-index: 3; bottom: 20px; right: 20px; display: flex; gap: 7px; }
+  .hero-dots b { width: 7px; height: 7px; border-radius: 50%; background: rgba(250,246,238,0.45); transition: background 0.3s ease, width 0.3s ease; }
+  .hero-dots b.on { background: var(--paper); width: 20px; border-radius: 4px; }
+  .photo-pill {
+    position: absolute; z-index: 3; bottom: 18px; left: 18px;
+    background: rgba(250, 246, 238, 0.92); backdrop-filter: blur(4px);
+    border-radius: 40px; padding: 0.45rem 1.05rem;
+    font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink);  }
+
+  /* Stats / credibility band */
+  .stats { background: var(--espresso); color: var(--paper); padding: 18px 0; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 8px 28px; }
+  .stat { text-align: center; position: relative; }
+  .stat + .stat::before { content: ""; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); height: 34px; width: 1px; background: rgba(250,246,238,0.16); }
+  .stat .num { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; letter-spacing: -0.02em; color: var(--paper); line-height: 1; }
+  .stat .num .gold { color: #ca9d6d; }
+  .stat .lbl { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,246,238,0.6); margin-top: 7px; }
+
+  /* Scroll progress */
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 60; background: linear-gradient(90deg, var(--accent), #ca9d6d); box-shadow: 0 0 12px rgba(202,157,109,0.5); will-change: width; }
+
+  /* Film grain overlay */
+  body::after {
+    content: ""; position: fixed; inset: 0; z-index: 200; pointer-events: none; opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* Soft glow behind hero */
+  .hero::before {
+    content: ""; position: absolute; z-index: 0; top: -20%; right: -8%;
+    width: 60%; height: 120%; pointer-events: none;
+    background: radial-gradient(closest-side, rgba(202,157,109,0.28), transparent 72%);
+    filter: blur(10px); animation: glowPulse 8s ease-in-out infinite;
+  }
+  @keyframes glowPulse { 0%, 100% { opacity: 0.75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.07); } }
+  .hero-grid { position: relative; z-index: 1; }
+
+  /* Ken Burns on the active hero slide */
+  .hero-photo .slide.active { animation: kenburns 8s var(--ease-out) both; }
+  @keyframes kenburns { from { transform: scale(1.001); } to { transform: scale(1.085); } }
+  .hero-photo .slide.portrait.active { animation: kenburnsP 8s var(--ease-out) both; }
+  @keyframes kenburnsP { from { transform: scale(1.001); } to { transform: scale(1.085); } }
+
+  /* Hero load-in entrance (staggered) */
+  .hero-copy > * { opacity: 0; transform: translateY(16px); animation: heroIn 0.9s var(--ease-out) forwards; }
+  .hero-copy > *:nth-child(1) { animation-delay: 0.15s; }
+  .hero-copy > *:nth-child(2) { animation-delay: 0.27s; }
+  .hero-copy > *:nth-child(3) { animation-delay: 0.39s; }
+  .hero-copy > *:nth-child(4) { animation-delay: 0.51s; }
+  .hero-copy > *:nth-child(5) { animation-delay: 0.63s; }
+  .hero-photo { opacity: 0; transform: translateY(20px) scale(0.985); animation: heroIn 1.1s var(--ease-out) 0.3s forwards; }
+  @keyframes heroIn { to { opacity: 1; transform: none; } }
+
+  /* Animated nav underline */
+  .nav-links a.link { position: relative; }
+  .nav-links a.link::after {
+    content: ""; position: absolute; left: 0; bottom: -5px; height: 1.5px; width: 100%;
+    background: var(--ink); transform: scaleX(0); transform-origin: right;
+    transition: transform 0.35s var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-links a.link:hover::after { transform: scaleX(1); transform-origin: left; }
+  }
+
+  /* Service card icons + richer hover */
+  .svc-card { position: relative; overflow: hidden; }
+  .svc-card .ico { width: 36px; height: 36px; color: var(--accent); margin-bottom: 20px; transition: transform 0.4s var(--ease-out); }
+  .svc-card .ico svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .svc-card:hover { border-color: var(--accent); }
+  .svc-card:hover .ico { transform: translateY(-3px) rotate(-4deg); }
+  .svc-card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 2px; background: linear-gradient(90deg, var(--accent), #ca9d6d);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.45s var(--ease-out);
+  }
+  .svc-card:hover::before { transform: scaleX(1); }
+
+  /* Animated FAQ open/close */
+  .faq-item::details-content {
+    height: 0; overflow: hidden; opacity: 0;
+    transition: height 0.38s var(--ease-out), opacity 0.32s var(--ease-out), content-visibility 0.38s allow-discrete;
+  }
+  .faq-item[open]::details-content { height: auto; opacity: 1; }
+
+  /* Global cursor-follow glow (whole site) */
+  #cursorGlow {
+    position: fixed; top: 0; left: 0; width: 560px; height: 560px; border-radius: 50%;
+    pointer-events: none; z-index: 90; transform: translate3d(0, 0, 0); margin: -280px 0 0 -280px;
+    background: radial-gradient(circle, rgba(214,166,116,0.5), rgba(214,166,116,0.14) 36%, transparent 66%);
+    mix-blend-mode: overlay; opacity: 0; transition: opacity 0.45s ease; will-change: transform;
+  }
+  #cursorGlow.on { opacity: 1; }
+  .booking { position: relative; overflow: hidden; }
+  .booking .wrap { position: relative; z-index: 1; }
+
+  /* Image hover zoom on gallery + portrait */
+  @media (hover: hover) and (pointer: fine) {
+    .ba-imgs img { transition: transform 0.7s var(--ease-out); }
+    .reveal.in .panel:hover img, .spray-photo.reveal.in:hover img, .ba:hover .ba-imgs img { transform: scale(1.05); }
+  }
+
+  /* Sections */
+  section { padding: 44px 0; }
+  section[id], main[id] { scroll-margin-top: 104px; }
+  .section-head { max-width: 40rem; margin: 0 auto 28px; text-align: center; }
+  .section-head .eyebrow { display: inline-flex; align-items: center; gap: 12px; }
+  .section-head .eyebrow::before, .section-head .eyebrow::after { content: ""; width: 26px; height: 1px; background: var(--accent); opacity: 0.45; }
+  .section-head h2 { font-size: clamp(2.6rem, 6vw, 4.2rem); margin-top: 12px; }
+  .section-head p { color: var(--grey); margin-top: 14px; font-size: 1.05rem; }
+
+  /* Skincare services */
+  .services { background: var(--paper); position: relative; }
+  .services::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 110px; background: linear-gradient(to bottom, var(--bone), transparent); pointer-events: none; }
+  .services .wrap { position: relative; z-index: 1; }
+  .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 20px; }
+  .svc-card {
+    background: var(--cream); border: 1px solid var(--line); border-radius: 16px;
+    padding: 38px 34px; transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; flex-direction: column;
+  }
+  .svc-card:hover { transform: translateY(-4px); box-shadow: 0 26px 60px -34px rgba(51,36,27,0.4); }
+  .svc-card h3 { font-size: 1.85rem; }
+  .svc-card .meta { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 8px 0 14px; }
+  .svc-card p { color: var(--grey); font-size: 0.97rem; }
+
+  /* Acne band */
+  .acne { background: var(--nude); }
+  .acne .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .acne h2 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 14px 0 20px; }
+  .acne p { color: #6e6055; font-size: 1.05rem; }
+  .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+  .badge { border: 1px solid rgba(51,36,27,0.32); border-radius: 40px; padding: 0.45rem 1.05rem; font-size: 0.74rem; color: var(--ink); }
+  .quote { margin-top: 30px; }
+  .quote p { font-family: var(--serif); font-style: italic; font-size: 1.85rem; line-height: 1.3; color: var(--ink); font-weight: 400; letter-spacing: -0.01em; }
+  .quote .who { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-top: 14px; }
+  .panel {
+    aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; position: relative;
+    background: var(--nude); box-shadow: 0 30px 70px -34px rgba(51,36,27,0.45);
+  }
+  .panel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about-portrait { aspect-ratio: 1 / 1; max-width: 440px; }
+  .about-portrait img { object-position: center; }
+
+  /* Spray tan */
+  .spray { background: var(--cream); }
+  .spray .wrap { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 60px; align-items: center; }
+  .spray-photo { aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 90px -44px rgba(51,36,27,0.55); }
+  .spray-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .spray-menu h2 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 14px 0 16px; }
+  .spray-menu .intro { color: var(--grey); font-size: 1.05rem; max-width: 32rem; margin-bottom: 30px; }
+  .tan-list { list-style: none; border-top: 1px solid var(--line); margin-bottom: 32px; }
+  .tan-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 22px; padding: 18px 2px; border-bottom: 1px solid var(--line); transition: padding-left 0.25s ease; }
+  .tan-list li:hover { padding-left: 10px; }
+  .tan-list .name { font-size: 1.35rem; color: var(--ink); letter-spacing: -0.01em; }
+  .tan-list .det { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+
+  /* About */
+  .about { background: var(--paper); }
+  .about .wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
+  .about h2 { font-size: clamp(2.6rem, 6vw, 4rem); margin: 14px 0 22px; }
+  .about p { color: var(--grey); margin-bottom: 16px; font-size: 1.05rem; }
+  .about .sig { font-family: var(--serif); font-size: 2.4rem; color: var(--accent); font-style: italic; font-weight: 400; }
+
+  /* Booking */
+  .booking { background: var(--espresso); color: var(--paper); text-align: center; }
+  .booking h2 { color: var(--paper); font-size: clamp(3rem, 9vw, 6.4rem); }
+  .booking p { color: rgba(250,246,238,0.72); max-width: 30rem; margin: 18px auto 36px; font-size: 1.05rem; }
+  .booking .eyebrow { color: rgba(250,246,238,0.6); }
+  .booking-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .booking-contact { margin-top: 34px; display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; font-size: 0.9rem; color: rgba(250,246,238,0.78); }
+  .booking-contact a:hover { color: var(--paper); }
+
+  /* Footer */
+  footer { background: var(--bone); color: var(--grey); padding: 48px 0 36px; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+  footer .brand { color: var(--ink); }
+  footer .foot-links { display: flex; gap: 22px; font-size: 0.85rem; }
+  footer .foot-links a:hover { color: var(--ink); }
+  .legal { width: 100%; text-align: center; font-size: 0.72rem; color: var(--grey); margin-top: 16px; }
+
+  /* Service / tan pricing */
+  .svc-card .price { display: block; font-size: 0.82rem; letter-spacing: 0.06em; color: var(--ink); font-weight: 600; margin-top: auto; padding-top: 18px; }
+  .tan-list .pricecol { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+  .tan-list .price { font-size: 1.05rem; color: var(--ink); font-weight: 600; letter-spacing: -0.01em; }
+
+  /* Results / before-after gallery */
+  .results { background: var(--bone); }
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .ba {
+    border-radius: 16px; overflow: hidden; border: 1px solid var(--line);
+    background: var(--cream); box-shadow: 0 24px 56px -38px rgba(51,36,27,0.4);
+  }
+  .ba-imgs { display: grid; grid-template-columns: 1fr 1fr; }
+  .ba-imgs figure { position: relative; aspect-ratio: 3 / 4; background: var(--nude); overflow: hidden; }
+  .ba-imgs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ba-imgs figure + figure { border-left: 2px solid var(--cream); }
+  .ba-imgs figcaption {
+    position: absolute; top: 10px; left: 10px; z-index: 2;
+    background: rgba(51,36,27,0.78); color: var(--paper);
+    font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.25rem 0.6rem; border-radius: 30px;
+  }
+  /* placeholder tile styling when no photo yet */
+  .ba-imgs figure.placeholder { display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center; background: linear-gradient(150deg, var(--nude), var(--peach) 70%, var(--nude)); }
+  .ba-imgs figure.placeholder::before { content: ""; width: 26px; height: 22px; border: 1.5px solid var(--espresso-soft); border-radius: 5px; opacity: 0.5; box-shadow: 0 0 0 3px var(--peach), inset 0 0 0 1px transparent; background: radial-gradient(circle at 50% 55%, transparent 4px, var(--espresso-soft) 4px, var(--espresso-soft) 5px, transparent 5px); }
+  .ba-imgs figure.placeholder span { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--espresso-soft); opacity: 0.66; }
+  .ba-cap { padding: 16px 18px; }
+  .ba-cap .t { font-size: 0.95rem; color: var(--ink); font-weight: 500; }
+  .ba-cap .d { font-size: 0.82rem; color: var(--grey); margin-top: 4px; }
+  .ph-note { text-align: center; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--grey); margin-top: 30px; font-style: italic; }
+
+  /* Testimonials */
+  .reviews { background: var(--paper); }
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 20px; }
+  .rev-card {
+    background: var(--cream); border: 1px solid var(--line); border-radius: 16px;
+    padding: 34px 30px; display: flex; flex-direction: column;
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
+  }
+  .rev-card:hover { transform: translateY(-4px); box-shadow: 0 26px 60px -36px rgba(51,36,27,0.42); border-color: var(--accent); }
+  .rev-stars { color: var(--accent); font-size: 0.95rem; letter-spacing: 0.18em; margin-bottom: 16px; }
+  .rev-card p { color: var(--ink); font-size: 1.05rem; line-height: 1.5; font-weight: 400; }
+  .rev-who { margin-top: auto; padding-top: 20px; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); }
+
+  /* FAQ */
+  .faq { background: var(--cream); }
+  .faq .wrap { max-width: 800px; }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 24px 0;
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    font-size: 1.2rem; color: var(--ink); font-weight: 500; letter-spacing: -0.01em;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 1.5rem; color: var(--accent); transition: transform 0.3s ease; line-height: 1; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item .ans { padding: 0 0 24px; color: var(--grey); font-size: 1rem; max-width: 60ch; }
+
+  /* Gift card line in booking */
+  .booking-extra { margin-top: 22px; font-size: 0.92rem; color: rgba(250,246,238,0.78); }
+  .booking-extra a { text-decoration: underline; text-underline-offset: 3px; }
+  .booking-extra a:hover { color: var(--paper); }
+
+  /* Footer columns */
+  .foot-meta { width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .foot-meta h4 { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); margin-bottom: 12px; font-weight: 600; }
+  .foot-meta p, .foot-meta a { font-size: 0.86rem; color: var(--grey); display: block; line-height: 1.7; }
+  .foot-meta a:hover { color: var(--ink); }
+
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Images wipe + settle as their block reveals */
+  .reveal .panel img, .spray-photo.reveal img {
+    clip-path: inset(0 0 100% 0); transform: scale(1.07);
+    transition: clip-path 0.95s var(--ease-out), transform 1.15s var(--ease-out);
+  }
+  .reveal.in .panel img, .spray-photo.reveal.in img {
+    clip-path: inset(0 0 0 0); transform: scale(1);
+  }
+
+  /* Staggered grid entrances */
+  .svc-grid > .reveal:nth-child(2), .results-grid > .reveal:nth-child(2), .rev-grid > .reveal:nth-child(2) { transition-delay: 0.07s; }
+  .svc-grid > .reveal:nth-child(3), .results-grid > .reveal:nth-child(3), .rev-grid > .reveal:nth-child(3) { transition-delay: 0.14s; }
+  .svc-grid > .reveal:nth-child(4) { transition-delay: 0.21s; }
+
+  .mock-banner { background: var(--accent); color: var(--paper); text-align: center; font-size: 0.72rem; letter-spacing: 0.1em; padding: 7px 16px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .reveal .panel img, .spray-photo.reveal img { clip-path: none; transform: none; transition: none; }
+    .hero-copy > *, .hero-photo { opacity: 1 !important; transform: none !important; }
+    .hero-photo .slide { transition: opacity 0.2s ease; }
+  }
+
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 36px; padding: 56px 0 68px; }
+    .hero-photo { max-width: 440px; margin: 0 auto; width: 100%; }
+    .acne .wrap, .about .wrap, .spray .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .acne .panel, .about-portrait, .spray-photo { max-width: 440px; margin: 0 auto; width: 100%; }
+    .spray-photo { order: -1; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .stats .wrap { grid-template-columns: 1fr 1fr; gap: 22px 20px; padding: 18px 28px; }
+    .stat:nth-child(3)::before { display: none; }
+    .results-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+    .rev-grid { grid-template-columns: 1fr; }
+    .foot-meta { grid-template-columns: 1fr; gap: 22px; }
+    .menu-toggle { display: block; }
+    section { padding: 38px 0; }
+    .nav-links {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: flex-start; gap: 1.15rem;
+      background: rgba(241, 233, 219, 0.98); backdrop-filter: blur(14px);
+      padding: 24px 28px 30px; border-bottom: 1px solid var(--line);
+      box-shadow: 0 24px 40px -28px rgba(51,36,27,0.5);
+      transform: translateY(-10px); opacity: 0; pointer-events: none;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+    header.nav.open .nav-links { transform: none; opacity: 1; pointer-events: auto; }
+    .nav-links a.link { font-size: 1.25rem; }
+    .nav-cta { width: 100%; text-align: center; padding: 0.9rem; font-size: 0.95rem; margin-top: 4px; }
+    .booking h2 { font-size: clamp(2.4rem, 8vw, 4.2rem); }
+    .booking p { font-size: 1rem; }
+    .booking-cta { flex-direction: column; align-items: stretch; max-width: 340px; margin-left: auto; margin-right: auto; }
+    .booking-cta .btn { width: 100%; }
+    .booking-contact { flex-direction: column; gap: 12px; font-size: 0.85rem; }
+  }
+  @media (max-width: 480px) {
+    .hero-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div id="cursorGlow"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Skinwell</a>
+    <nav class="nav-links">
+      <a class="link" href="#services">Skincare</a>
+      <a class="link" href="#spray">Spray Tan</a>
+      <a class="link" href="#reviews">Reviews</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="link" href="#about">About</a>
+      <a class="btn btn-filled nav-cta" href="https://skinwellbyamanda.glossgenius.com/" target="_blank" rel="noopener">Book Now</a>
+    </nav>
+    <button class="menu-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Licensed Esthetician · North Jersey</span>
+        <h1>Healthy skin,<br /><em>real glow.</em></h1>
+        <p class="lead">Corrective skincare, facial sculpting, and a flawless mobile spray tan. Personalized treatments with Amanda, serving Madison, Chatham, and all of North Jersey.</p>
+        <div class="hero-cta">
+          <a class="btn btn-filled" href="https://skinwellbyamanda.glossgenius.com/" target="_blank" rel="noopener">Book an Appointment</a>
+          <a class="btn" href="#spray">Explore Spray Tans</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>Face Reality</strong>Certified Acne Expert</div>
+          <div><strong>SkinPen</strong>Microneedling</div>
+          <div><strong>Mobile</strong>Spray Tan Service</div>
+        </div>
+      </div>
+      <div class="hero-photo" id="heroPhoto">
+        <img class="slide portrait active" src="assets/hero.jpg" alt="Amanda, licensed esthetician at Skinwell" loading="eager" />
+        <img class="slide" src="assets/work-tan.jpg" alt="Custom spray tan result" loading="lazy" />
+        <img class="slide" src="assets/spray.jpg" alt="Sunkissed bronzed glow" loading="lazy" />
+        <img class="slide" src="assets/treatment.jpg" alt="Glowing skin after a facial" loading="lazy" />
+        <div class="grad"></div>
+        <div class="hero-dots" id="heroDots"></div>
+        <span class="photo-pill">@skinwellbyamanda</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS / CREDIBILITY -->
+  <!-- PLACEHOLDER STATS — confirm Amanda's real numbers before launch -->
+  <section class="stats" aria-label="Skinwell at a glance">
+    <div class="wrap">
+      <div class="stat reveal"><div class="num" data-count="500" data-suffix="+">0</div><div class="lbl">Glow-ups given</div></div>
+      <div class="stat reveal"><div class="num">5.0<span class="gold">★</span></div><div class="lbl">Client rated</div></div>
+      <div class="stat reveal"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Custom treatments</div></div>
+      <div class="stat reveal"><div class="num">7&ndash;10</div><div class="lbl">Day tan wear</div></div>
+    </div>
+  </section>
+
+  <!-- SKINCARE -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Skincare Menu</span>
+        <h2>Treatments built around your skin</h2>
+        <p>Every appointment starts with a real consultation. No two faces are the same, so no two treatments are either.</p>
+      </div>
+      <div class="svc-grid">
+        <!-- PLACEHOLDER PRICES — confirm Amanda's real rates before launch -->
+        <div class="svc-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c4 0 6 3 6 7 0 5-3 11-6 11s-6-6-6-11c0-4 2-7 6-7Z"/><path d="M9 10c1 1 2 1.5 3 1.5S14 11 15 10"/></svg></div>
+          <h3>Corrective Facial</h3>
+          <div class="meta">Customized · 60 min</div>
+          <p>A fully personalized facial: deep cleanse, exfoliation, extractions, and targeted treatment to correct what your skin needs most that day.</p>
+          <span class="price">Starting at $120</span>
+        </div>
+        <div class="svc-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21c4.5 0 7-3.5 7-9 0-4-2.5-9-7-9S5 8 5 12c0 5.5 2.5 9 7 9Z"/><path d="M8.5 13c.7 1.3 2 2 3.5 2s2.8-.7 3.5-2"/><path d="M9 9h.01M15 9h.01"/></svg></div>
+          <h3>Facial Sculpting</h3>
+          <div class="meta">Lift · Contour · De-Puff</div>
+          <p>Sculpting and lymphatic techniques that lift, define, and de-puff for a snatched, lit-from-within finish.</p>
+          <span class="price">Starting at $135</span>
+        </div>
+        <div class="svc-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9.5h.01M15 9.5h.01M8.5 14.5c.9 1.2 2.1 1.8 3.5 1.8s2.6-.6 3.5-1.8"/></svg></div>
+          <h3>Acne Program</h3>
+          <div class="meta">Face Reality Method</div>
+          <p>A guided clear-skin journey with a custom home-care routine and bi-weekly treatments. Built for lasting results, not a quick fix.</p>
+          <span class="price">Consult $75 · applied to your first treatment</span>
+        </div>
+        <div class="svc-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><path d="M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z"/></svg></div>
+          <h3>SkinPen Microneedling</h3>
+          <div class="meta">Smooth · Tighten · Brighten</div>
+          <p>Collagen-boosting microneedling to soften fine lines, refine texture, and fade scarring for firmer, more radiant skin.</p>
+          <span class="price">Starting at $250 · packages available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACNE -->
+  <section class="acne" id="acne">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Clear Skin, Backed by Method</span>
+        <h2>A certified acne expert in your corner</h2>
+        <p>Acne is not about scrubbing harder. As a Face Reality certified acne expert, Amanda maps your triggers, builds a custom routine, and coaches you through every step until your skin clears and stays that way.</p>
+        <div class="badge-row">
+          <span class="badge">Face Reality Certified</span>
+          <span class="badge">Custom Home Care</span>
+          <span class="badge">Bi-Weekly Coaching</span>
+        </div>
+        <div class="quote">
+          <p>"Deciding to follow my passion is the best decision I've made so far."</p>
+          <span class="who">amanda · skinwell</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="panel"><img src="assets/treatment.jpg" alt="Skincare treatment glow" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPRAY TAN -->
+  <section class="spray" id="spray">
+    <div class="wrap">
+      <div class="spray-photo reveal">
+        <img src="assets/spray.jpg" alt="Sunkissed spray tan glow" loading="lazy" />
+      </div>
+      <div class="spray-menu reveal">
+        <span class="eyebrow">Mobile Spray Tan</span>
+        <h2>Good tan, good mood.</h2>
+        <p class="intro">A custom, buildable, never-orange glow applied by a pro in the comfort of your own space. You relax, we set up, you walk out glowing. Bridal and group bookings welcome.</p>
+        <!-- PLACEHOLDER PRICES — confirm Amanda's real rates before launch -->
+        <ul class="tan-list">
+          <li><span class="name">Custom Mobile Spray Tan</span><span class="pricecol"><span class="price">$45</span><span class="det">45 min · 1 guest</span></span></li>
+          <li><span class="name">Mobile Tan for Two</span><span class="pricecol"><span class="price">$80</span><span class="det">60 min · 2 guests</span></span></li>
+          <li><span class="name">Mobile Group Tan 3+</span><span class="pricecol"><span class="price">$35 / guest</span><span class="det">75 min · the crew</span></span></li>
+          <li><span class="name">Hydration Mist Add-On</span><span class="pricecol"><span class="price">$10</span><span class="det">5 min</span></span></li>
+        </ul>
+        <a class="btn btn-filled" href="https://skinwellbyamanda.glossgenius.com/" target="_blank" rel="noopener">Book Your Glow Moment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS / BEFORE-AFTER -->
+  <section class="results" id="results">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Real Skin, Real Results</span>
+        <h2>Before &amp; after</h2>
+        <p>A look at what consistent, corrective care can do. Every result is real, unfiltered, and earned over time.</p>
+      </div>
+      <!-- PLACEHOLDER GALLERY — drop Amanda's real before/after photos into assets/ and replace the .placeholder figures -->
+      <div class="results-grid">
+        <div class="ba reveal">
+          <div class="ba-imgs">
+            <figure><figcaption>Before</figcaption><img src="assets/ba1-before.jpg" alt="Before — placeholder" loading="lazy" /></figure>
+            <figure><figcaption>After</figcaption><img src="assets/ba1-after.jpg" alt="After — placeholder" loading="lazy" /></figure>
+          </div>
+          <div class="ba-cap"><div class="t">Acne clearing</div><div class="d">12-week Face Reality program</div></div>
+        </div>
+        <div class="ba reveal">
+          <div class="ba-imgs">
+            <figure><figcaption>Before</figcaption><img src="assets/ba2-before.jpg" alt="Before — placeholder" loading="lazy" /></figure>
+            <figure><figcaption>After</figcaption><img src="assets/ba2-after.jpg" alt="After — placeholder" loading="lazy" /></figure>
+          </div>
+          <div class="ba-cap"><div class="t">Texture &amp; tone</div><div class="d">SkinPen microneedling series</div></div>
+        </div>
+        <div class="ba reveal">
+          <div class="ba-imgs">
+            <figure><figcaption>Before</figcaption><img src="assets/ba3-before.jpg" alt="Before — placeholder" loading="lazy" /></figure>
+            <figure><figcaption>After</figcaption><img src="assets/ba3-after.jpg" alt="After — placeholder" loading="lazy" /></figure>
+          </div>
+          <div class="ba-cap"><div class="t">Bridal glow</div><div class="d">Custom mobile spray tan</div></div>
+        </div>
+      </div>
+      <p class="ph-note reveal">Sample layout · replace tiles with Amanda's real client photos (with permission) before launch.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="panel about-portrait"><img src="assets/amanda.jpg" alt="Amanda, licensed esthetician at Skinwell" loading="lazy" /></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Meet Your Esthetician</span>
+        <h2>Hi, I'm Amanda</h2>
+        <p>I'm a licensed esthetician specializing in corrective treatments, facial sculpting, and acne-focused skincare, and I bring my mobile spray tan service right to you across North Jersey.</p>
+        <p>My approach is simple: meet your skin where it is, keep it honest, and build a plan you can actually stick to. Whether you're clearing acne, chasing glow, or prepping for a big day, we'll get there together.</p>
+        <p class="sig">Amanda</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Kind Words</span>
+        <h2>Loved by her clients</h2>
+        <p>A few notes from the people Amanda gets to glow up.</p>
+      </div>
+      <!-- PLACEHOLDER REVIEWS — swap in real GlossGenius / Google / Instagram testimonials before launch -->
+      <div class="rev-grid">
+        <div class="rev-card reveal">
+          <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"My skin has never been clearer. Amanda actually listened, built me a routine I could keep up with, and checked in the whole way. Worth every visit."</p>
+          <div class="rev-who">Sample review · client name</div>
+        </div>
+        <div class="rev-card reveal">
+          <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Best spray tan I've ever had, and she came to me. Zero orange, lasted over a week, and I felt amazing for my wedding. Booking her for everything now."</p>
+          <div class="rev-who">Sample review · client name</div>
+        </div>
+        <div class="rev-card reveal">
+          <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"The facial sculpting is unreal. I walked out looking lifted and glowing, and people kept asking what I'd done. Amanda is so good at what she does."</p>
+          <div class="rev-who">Sample review · client name</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Good to Know</span>
+        <h2>Questions, answered</h2>
+        <p>Everything you need before your first appointment or spray tan.</p>
+      </div>
+      <div class="reveal">
+        <details class="faq-item" open>
+          <summary>How do I prep for my spray tan?</summary>
+          <div class="ans">Shower, exfoliate, and shave at least 4 to 6 hours before your appointment. Come with clean skin, no lotion, deodorant, makeup, or perfume. Wear loose, dark clothing and bring flip-flops so you can leave glowing without smudging.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a spray tan last?</summary>
+          <div class="ans">Most tans last 7 to 10 days with proper care. Wait 8 to 24 hours before your first rinse, moisturize daily, avoid long hot soaks, and pat dry instead of rubbing. A hydration mist add-on helps it fade evenly.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What areas do you serve for mobile appointments?</summary>
+          <div class="ans">Mobile spray tans are available across North Jersey, based in Madison and Chatham and covering surrounding Morris, Union, and Essex County towns. Reach out if you are nearby and not sure, group and bridal travel can usually be arranged.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the acne program and how long does it take?</summary>
+          <div class="ans">It starts with a consultation to map your skin and triggers, then a custom home-care routine paired with bi-weekly treatments. Most clients see meaningful clearing within 3 to 4 months. It is a guided process, not a one-time facial.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is your cancellation policy?</summary>
+          <div class="ans">Please give at least 24 hours notice to reschedule or cancel. Late cancellations and no-shows may be subject to a fee. The full policy is shown when you book online through GlossGenius.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking">
+    <div class="wrap reveal">
+      <span class="eyebrow">Ready When You Are</span>
+      <h2>Let's get you glowing</h2>
+      <p>Book your facial, acne consult, microneedling, or mobile spray tan online in a few taps.</p>
+      <div class="booking-cta">
+        <a class="btn btn-light" href="https://skinwellbyamanda.glossgenius.com/" target="_blank" rel="noopener">Book on GlossGenius</a>
+        <a class="btn btn-light" href="tel:+19084727078">Call 908-472-7078</a>
+      </div>
+      <div class="booking-contact">
+        <span>📍 Madison, NJ &amp; mobile across North Jersey</span>
+        <a href="https://www.instagram.com/skinwellbyamanda" target="_blank" rel="noopener">Instagram @skinwellbyamanda</a>
+      </div>
+      <p class="booking-extra">Looking for a gift? <a href="https://skinwellbyamanda.glossgenius.com/" target="_blank" rel="noopener">Gift cards are available here</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand">Skinwell</a>
+    <div class="foot-links">
+      <a href="#services">Skincare</a>
+      <a href="#acne">Acne Care</a>
+      <a href="#spray">Spray Tan</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://skinwellbyamanda.glossgenius.com/" target="_blank" rel="noopener">Book</a>
+      <a href="https://www.instagram.com/skinwellbyamanda" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <!-- PLACEHOLDER HOURS — confirm Amanda's real availability before launch -->
+    <div class="foot-meta">
+      <div>
+        <h4>Visit &amp; Mobile</h4>
+        <p>Studio in Madison, NJ</p>
+        <p>Mobile spray tans across North Jersey</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Tue – Fri · 10am – 7pm</p>
+        <p>Sat · 9am – 4pm</p>
+        <p>Sun – Mon · By appointment</p>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <a href="tel:+19084727078">908-472-7078</a>
+        <a href="https://www.instagram.com/skinwellbyamanda" target="_blank" rel="noopener">@skinwellbyamanda</a>
+        <a href="https://skinwellbyamanda.glossgenius.com/" target="_blank" rel="noopener">Book online</a>
+      </div>
+    </div>
+    <div class="legal">© Skinwell by Amanda · Licensed Esthetician + Mobile Spray Tan Artist · Madison &amp; Chatham, NJ · Concept Mockup</div>
+  </div>
+</footer>
+
+<script src="assets/lenis.min.js"></script>
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nav = document.getElementById('nav');
+
+  // Smooth scroll (Lenis) — graceful fallback to native if offline or reduced-motion
+  let lenis = null;
+  if (!reduceMotion && window.Lenis) {
+    lenis = new Lenis({ lerp: 0.14, wheelMultiplier: 1.05, touchMultiplier: 1.6 });
+    const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) { e.preventDefault(); lenis.scrollTo(id, { offset: -104 }); nav.classList.remove('open'); }
+      });
+    });
+  }
+
+  // Scroll progress bar
+  const progress = document.getElementById('scrollProgress');
+  const onScroll = () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 12);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    if (progress) progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    // Hero parallax
+    if (!reduceMotion && heroPhoto && y < window.innerHeight * 1.2) {
+      heroPhoto.style.transform = 'translate3d(0,' + y * 0.12 + 'px,0)';
+    }
+  };
+  const heroPhoto = document.getElementById('heroPhoto');
+  window.addEventListener('scroll', onScroll, { passive: true });
+  if (lenis) lenis.on('scroll', onScroll);
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach((a) => a.addEventListener('click', () => nav.classList.remove('open')));
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Count-up stats
+  const counters = document.querySelectorAll('.num[data-count]');
+  const runCount = (el) => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    if (reduceMotion) { el.textContent = target + suffix; return; }
+    const dur = 1400, start = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { runCount(e.target); countIO.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  counters.forEach((c) => countIO.observe(c));
+
+  // Global cursor-follow glow (smooth trailing)
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (finePointer && !reduceMotion) {
+    const glow = document.getElementById('cursorGlow');
+    let gx = window.innerWidth / 2, gy = window.innerHeight / 2, tx = gx, ty = gy, shown = false;
+    window.addEventListener('pointermove', (e) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) { shown = true; glow.classList.add('on'); nav.classList.add('glow-on'); }
+    });
+    document.addEventListener('pointerleave', () => { shown = false; glow.classList.remove('on'); nav.classList.remove('glow-on'); });
+    const glowRaf = () => {
+      gx += (tx - gx) * 0.16; gy += (ty - gy) * 0.16;
+      glow.style.transform = 'translate3d(' + gx + 'px,' + gy + 'px,0)';
+      // Drive the nav's own glow (its backdrop-filter isolates the global one)
+      const navRect = nav.getBoundingClientRect();
+      nav.style.setProperty('--gx', gx + 'px');
+      nav.style.setProperty('--gy', (gy - navRect.top) + 'px');
+      requestAnimationFrame(glowRaf);
+    };
+    requestAnimationFrame(glowRaf);
+  }
+
+  // Hero rotating slideshow
+  (function () {
+    const slides = Array.from(document.querySelectorAll('#heroPhoto .slide'));
+    const dotsWrap = document.getElementById('heroDots');
+    if (slides.length < 2) return;
+    slides.forEach((_, i) => {
+      const b = document.createElement('b');
+      if (i === 0) b.classList.add('on');
+      dotsWrap.appendChild(b);
+    });
+    const dots = Array.from(dotsWrap.children);
+    let i = 0;
+    const go = (n) => {
+      slides[i].classList.remove('active'); dots[i].classList.remove('on');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('active'); dots[i].classList.add('on');
+    };
+    let timer = setInterval(() => go(i + 1), 3600);
+    dots.forEach((d, n) => d.addEventListener('click', () => { clearInterval(timer); go(n); timer = setInterval(() => go(i + 1), 3600); }));
+  })();
+</script>
+
+<!-- Structured data for Google (LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Skinwell by Amanda",
+  "description": "Licensed esthetician offering corrective skincare, facial sculpting, acne care, SkinPen microneedling, and mobile spray tanning across North Jersey.",
+  "image": "assets/hero.jpg",
+  "telephone": "+1-908-472-7078",
+  "url": "https://skinwellbyamanda.com/",
+  "priceRange": "$$",
+  "areaServed": "North Jersey",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madison",
+    "addressRegion": "NJ",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.instagram.com/skinwellbyamanda",
+    "https://skinwellbyamanda.glossgenius.com/"
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00" }
+  ]
+}
+</script>
+
+</body>
+</html>
