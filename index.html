@@ -420,11 +420,18 @@
   }
 
   @media (max-width: 920px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 36px; padding: 56px 0 68px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 30px; padding: 28px 0 40px; }
     .hero-photo { max-width: 440px; margin: 0 auto; width: 100%; }
-    .acne .wrap, .about .wrap, .spray .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .acne .wrap, .about .wrap, .spray .wrap { grid-template-columns: 1fr; gap: 32px; }
     .acne .panel, .about-portrait, .spray-photo { max-width: 440px; margin: 0 auto; width: 100%; }
     .spray-photo { order: -1; }
+
+    /* Center content on mobile for a balanced, intentional layout */
+    .hero-copy { text-align: center; align-items: center; }
+    .acne .wrap > .reveal, .spray-menu, .about .wrap > .reveal { text-align: center; }
+    .hero p.lead, .spray-menu .intro, .acne p, .about p { margin-left: auto; margin-right: auto; }
+    .hero-cta, .hero-meta, .badge-row { justify-content: center; }
+    .spray-menu .btn, .about .sig { display: inline-block; }
     .svc-grid { grid-template-columns: 1fr; }
     .stats .wrap { grid-template-columns: 1fr 1fr; gap: 22px 20px; padding: 18px 28px; }
     .stat:nth-child(3)::before { display: none; }
@@ -841,23 +848,30 @@
   }, { threshold: 0.5 });
   counters.forEach((c) => countIO.observe(c));
 
-  // Global cursor-follow glow (smooth trailing)
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  if (finePointer && !reduceMotion) {
+  // Ambient + cursor-follow glow — works on desktop AND mobile.
+  // Fades in 2s after load, follows the cursor/touch, and gently drifts on its own when idle.
+  if (!reduceMotion) {
     const glow = document.getElementById('cursorGlow');
-    let gx = window.innerWidth / 2, gy = window.innerHeight / 2, tx = gx, ty = gy, shown = false;
-    window.addEventListener('pointermove', (e) => {
-      tx = e.clientX; ty = e.clientY;
-      if (!shown) { shown = true; glow.classList.add('on'); nav.classList.add('glow-on'); }
-    });
-    document.addEventListener('pointerleave', () => { shown = false; glow.classList.remove('on'); nav.classList.remove('glow-on'); });
-    const glowRaf = () => {
-      gx += (tx - gx) * 0.16; gy += (ty - gy) * 0.16;
+    let gx = window.innerWidth / 2, gy = window.innerHeight * 0.42, tx = gx, ty = gy;
+    let mode = 'auto', lastInput = -1e9, started = false;
+    const show = () => { if (!started) { started = true; glow.classList.add('on'); nav.classList.add('glow-on'); } };
+    setTimeout(show, 2000); // 2-second delayed start on every device
+    const setTarget = (x, y) => { tx = x; ty = y; mode = 'pointer'; lastInput = performance.now(); };
+    window.addEventListener('pointermove', (e) => setTarget(e.clientX, e.clientY));
+    window.addEventListener('touchmove', (e) => { const t = e.touches[0]; if (t) setTarget(t.clientX, t.clientY); }, { passive: true });
+    const glowRaf = (now) => {
+      if (mode === 'pointer' && now - lastInput > 2500) mode = 'auto'; // resume drifting when idle
+      if (mode === 'auto') {
+        const el = now / 1000;
+        tx = window.innerWidth * (0.5 + 0.34 * Math.sin(el * 0.45));
+        ty = window.innerHeight * (0.44 + 0.22 * Math.sin(el * 0.33));
+      }
+      gx += (tx - gx) * 0.09; gy += (ty - gy) * 0.09;
       glow.style.transform = 'translate3d(' + gx + 'px,' + gy + 'px,0)';
       // Drive the nav's own glow (its backdrop-filter isolates the global one)
-      const navRect = nav.getBoundingClientRect();
+      const navTop = nav.getBoundingClientRect().top;
       nav.style.setProperty('--gx', gx + 'px');
-      nav.style.setProperty('--gy', (gy - navRect.top) + 'px');
+      nav.style.setProperty('--gy', (gy - navTop) + 'px');
       requestAnimationFrame(glowRaf);
     };
     requestAnimationFrame(glowRaf);
